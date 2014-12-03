@@ -1,0 +1,17 @@
+Options +FollowSymLinks -indexes
+
+RewriteEngine On
+RewriteBase /Developpement/bitbucket/framework
+
+
+# gestion des erreurs
+ErrorDocument 404 					/Developpement/bitbucket/frameworkerreur.php
+
+# gestion des routes
+
+RewriteRule ^action/(.*)/(.*)/$     controleur.php?d1=action&d2=$1&d3=$2	[QSA]
+RewriteRule ^action/(.*)/$          controleur.php?d1=action&d2=$1			[QSA]
+
+RewriteRule ^(.*)/(.*)/(.*)/$	    controleur.php?d1=$1&d2=$2&d3=$3  		[QSA]
+RewriteRule ^(.*)/(.*)/$	    	controleur.php?d1=$1&d2=$2    	 		[QSA]
+RewriteRule ^(.*)/$               	controleur.php?d1=$1            		[QSA]
