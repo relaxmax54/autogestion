@@ -1,11 +1,11 @@
 Options +FollowSymLinks -indexes
 
 RewriteEngine On
-RewriteBase /Developpement/bitbucket/framework
+RewriteBase /Developpement/github/autogestion
 
 
 # gestion des erreurs
-ErrorDocument 404 					/Developpement/bitbucket/frameworkerreur.php
+ErrorDocument 404 					/Developpement/github/autogestion/erreur.php
 
 # gestion des routes
 
