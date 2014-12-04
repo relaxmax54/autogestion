@@ -13,7 +13,12 @@ if (!is_object($application))$application = new Application();
 if(isset($_GET['d1'])){
 	//si la requete est une action
 	if($_GET['d1']=="action"){
-		switch($_GET['d2']){
+		if(isset($_GET['d2'])){
+			$action=$_GET['d2'];
+		}else{
+			$application->erreurURL();
+		}
+/*		switch($_GET['d2']){
 			case "connexion":
 				$action="connexion.php";
 				break;
@@ -25,10 +30,12 @@ if(isset($_GET['d1'])){
 				break;
 			default:
 				$action="erreurURL.php";
-		}
-		require("actions/".$action);
+*/
+		$application->realiseAction($action);
+
 	}else{
 	//sinon c'est une vue qui est demandée
+		/*
 		switch($_GET['d1']){
 			case "accueil":
 				$vue="accueil.php";
@@ -48,7 +55,12 @@ if(isset($_GET['d1'])){
 			default:
 				$vue="erreurURL.php";
 		}
+		*/
+
+		$vue=$_GET['d1'];
 	}
+}else{
+	$application->erreurURL();
 }
 
 

@@ -1,3 +1,3 @@
 <?
-header("Location:$application->root/accueil/");
+header("Location:$this->root/inscription/");
 ?>

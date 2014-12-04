@@ -1,7 +1,7 @@
 <?
 
-$application->connexion=!$application->connexion;
+$this->connexion=!$this->connexion;
 
-header("Location:$application->root/accueil/");
+header("Location:$this->root/accueil/");
 
 ?>
