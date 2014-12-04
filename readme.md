@@ -8,6 +8,8 @@ git pull framework master
 
 A FAIRE
 
+méthode d'importation de fichiers xls
+
 inclure code de SELIWEB
 inclure code de Marcot
 
