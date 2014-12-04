@@ -14,55 +14,32 @@ if(isset($_GET['d1'])){
 	//si la requete est une action
 	if($_GET['d1']=="action"){
 		if(isset($_GET['d2'])){
-			$action=$_GET['d2'];
-		}else{
-			$application->erreurURL();
-		}
-/*		switch($_GET['d2']){
-			case "connexion":
-				$action="connexion.php";
-				break;
-			case "inscription":
-				$action="inscription.php";
-				break;			
-			case "retour":
-				$action="retour.php";
-				break;
-			default:
-				$action="erreurURL.php";
-*/
-		$application->realiseAction($action);
+			$application->realiseAction($_GET['d2']);
+			/*
+			** actions valables :
+			** connexion
+			** inscription
+			** retour
+			*/
 
+		}else{
+			$vue="erreurURL";
+		}
 	}else{
 	//sinon c'est une vue qui est demandée
-		/*
-		switch($_GET['d1']){
-			case "accueil":
-				$vue="accueil.php";
-				break;
-			case "comptes":
-				$vue="comptes.php";
-				break;
-			case "synthese":
-				$vue="synthese.php";
-				break;
-			case "saisie":
-				$vue="saisie.php";
-				break;
-			case "testBootstrap";
-				$vue="bootstrap.php";
-				break;
-			default:
-				$vue="erreurURL.php";
-		}
-		*/
-
 		$vue=$_GET['d1'];
+		/*
+		** vues possibles :
+		** accueil
+		** comptes
+		** synthese
+		** saisie
+		** bootstrap
+		*/
 	}
 }else{
-	$application->erreurURL();
+	$vue="erreurURL";
 }
-
 
 require("vues/page_globale.php");
 

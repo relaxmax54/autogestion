@@ -1,6 +1,6 @@
 <?
-/*
-** Classe application
+/**
+* Classe application
 */
 class Application{
 
@@ -10,8 +10,8 @@ class Application{
 	public $BDD_PASSWORD;
 	public $connexion;
 	public $root;
-	/*
-	** constructeur par défaut qui charge les paramètres de configuration de l'application
+	/**
+	* constructeur par défaut qui charge les paramètres de configuration de l'application
 	*/
 	public function __construct(){
 		//à modifier pour récupérer les paramètres en XML
@@ -24,21 +24,20 @@ class Application{
 		//le visiteur du site est déconnecté par défaut
 		$this->connexion=false;
 	}
-	/*
-	** affiche les vues demandées par l'utilisateur
-	** @param $vue : nom du fichier requis 
+	/**
+	* affiche les vues demandées par l'utilisateur
+	* @param $vue : nom du fichier requis 
 	*/
 	public function afficheVue($vue){
 		require("vues/".$vue.".php");
 	}
-	/*
-	** réalise les actions demandées par l'utilisateur
-	** @param $action : nom du fichier requis 
+	/**
+	* réalise les actions demandées par l'utilisateur
+	* @param $action : nom du fichier requis 
 	*/
 	public function realiseAction($action){
 		require("actions/".$action.".php");
 	}	
 }
-
 
 ?>

@@ -2,6 +2,6 @@
 <pre>
 <?
 print_r($_GET);
-print_r($application);
+print_r($this);
 ?>
 </pre>
