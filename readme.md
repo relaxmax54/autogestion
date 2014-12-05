@@ -9,6 +9,8 @@ git pull framework master
 A FAIRE
 
 méthode d'importation de fichiers xls
+classe héritière de la classe Application
+dossier modules
 
 inclure code de SELIWEB
 inclure code de Marcot
