@@ -6,4 +6,4 @@ print_r($_GET);
 </pre>
 <?
 echo '<p>*'.$vue.'*</p>';
-echo '<p><a href="'.$application->root.'/bootstrap/">Bootstrap</a></p>';
+echo '<p><a href="'.$this->root.'/bootstrap/">Bootstrap</a></p>';

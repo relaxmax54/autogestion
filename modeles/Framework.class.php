@@ -37,7 +37,14 @@ class Framework{
 	*/
 	public function realiseAction($action){
 		require("actions/".$action.".php");
-	}	
+	}
+	/**
+	* affiche les modules demandés par l'utilisateur
+	* @param $module : nom du fichier requis 
+	*/
+	public function afficheModule($module){
+		require("modules/".$module.".php");
+	}
 }
 
 ?>

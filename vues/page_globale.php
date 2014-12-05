@@ -10,13 +10,13 @@
 
 	        <header class="row">
 	        	<div class="col-lg-3">
-	        		<?require_once("modules/logo.php");?>
+	        		<?$application->afficheModule("logo");?>
 	        	</div>
 	        	<div class="col-lg-6">
-	        		<?require_once("modules/notifications.php");?>
+	        		<?$application->afficheModule("notifications");?>
 	        	</div>
 	        	<div class="col-lg-3">
-	        		<?require_once("modules/connexion.php");?>
+	        		<?$application->afficheModule("connexion");?>
 	        	</div>        	
 		        <div class="col-lg-12">
 	        		<?require_once("header.php");?>
@@ -28,10 +28,10 @@
 		        <div class="col-lg-2">
 		          	<div class="row">
 			            <aside class="col-lg-12">
-			        		<?require("modules/url.php");?>
+	        				<?$application->afficheModule("url");?>
 			            </aside>
 			            <aside class="col-lg-12">
-			        		<?require("modules/module.php");?>
+	        				<?$application->afficheModule("module");?>
 			            </aside>
 		          	</div>
 		        </div>
@@ -50,10 +50,10 @@
 		        <div class="col-lg-2">
 		          	<div class="row">
 		            	<aside class="col-lg-12">
-			        		<?require("modules/module.php");?>
+	        				<?$application->afficheModule("module");?>
 		            	</aside>
 		            	<aside class="col-lg-12">
-			        		<?require("modules/module.php");?>
+	        				<?$application->afficheModule("module");?>
 		            	</aside>
 		            </div>
 		        </div>

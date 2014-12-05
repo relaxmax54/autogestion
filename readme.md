@@ -15,3 +15,8 @@ dossier modules
 inclure code de SELIWEB
 inclure code de Marcot
 
+pourquoi la variable $vue n'est pas accessible dans url.php ?
+
+inclure un module date/heure
+
+inclure un envoi de courriel à chaque connexion
