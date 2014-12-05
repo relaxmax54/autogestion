@@ -25,7 +25,7 @@ class Bdd extends PDO {
       
       try {
         // Connection au serveur
-        $dns          = 'mysql:host=localhost;dbname=framework';
+        $dns          = 'mysql:host=localhost;dbname=autogestion';
         $utilisateur  = 'raoul';
         $motDePasse   = 'musique';
         // Options de connection
