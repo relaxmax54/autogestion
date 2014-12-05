@@ -1,8 +1,8 @@
 <?
 /**
-* Classe application
+* Classe Framework
 */
-class Application{
+class Framework{
 
 	public $BDD_SERVER;
 	public $BDD_NAME;
