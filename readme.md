@@ -16,6 +16,7 @@ inclure code de SELIWEB
 inclure code de Marcot
 inclure un module date/heure
 inclure un envoi de courriel à chaque connexion
+les modifications des champs existant de la table paramètre ne sont pas répercutés dans la BDD
 
 PROBLEMES
 

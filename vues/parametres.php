@@ -33,7 +33,7 @@ if(isset($_POST['ok']) && $_POST['ok']=='Sauvegarder')
 			'enr' => $_POST['new_param']
 		));
 		//MAJ de l'objet parametres
-		$parametre->$enr = $val;
+		$this->parametre->$enr = $val;
 		//réinitialisation des valeurs pour permettre une nouvelle insertion
 		$_POST['new_valeur']='';
 		$_POST['new_param']='';
