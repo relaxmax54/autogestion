@@ -29,11 +29,11 @@ if(isset($_GET['d1'])){
 			*/
 
 		}else{
-			$vue="erreurURL";
+			$application->vue="erreurURL";
 		}
 	}else{
 	//sinon c'est une vue qui est demandée
-		$vue=$_GET['d1'];
+		$application->vue=$_GET['d1'];
 		/*
 		** vues possibles :
 		** accueil
@@ -44,7 +44,7 @@ if(isset($_GET['d1'])){
 		*/
 	}
 }else{
-	$vue="erreurURL";
+	$application->vue="erreurURL";
 }
 
 require("vues/page_globale.php");

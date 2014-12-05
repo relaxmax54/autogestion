@@ -5,5 +5,6 @@ print_r($_GET);
  ?>
 </pre>
 <?
-echo '<p>*'.$vue.'*</p>';
+echo '<p>*'.$this->vue.'*</p>';
 echo '<p><a href="'.$this->root.'/bootstrap/">Bootstrap</a></p>';
+echo '<p><a href="'.$this->root.'/parametres/">personnalisation</a></p>';
