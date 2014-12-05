@@ -4,3 +4,4 @@ ICI c'est l'accueil !!!
 	print_r($this);
  ?>
 </pre>
+<? echo "Classe parente : ".get_parent_class($this);?>
