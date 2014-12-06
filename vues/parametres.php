@@ -12,7 +12,7 @@ if(isset($_POST['ok']) && $_POST['ok']=='Sauvegarder')
 	//MAJ de la BDD à partir des données POST récupérées
 	foreach($_POST as $element=>$value)
 	{
-		$reponse = Bdd::getInstance()->prepare("UPDATE parametres SET valeur = :val WHERE nom =:enr");
+		$reponse = Bdd::getInstance($this)->prepare("UPDATE parametres SET valeur = :val WHERE nom =:enr");
 		$reponse->execute(array(
 			'val' => $value,
 			'enr' => $element
@@ -24,7 +24,7 @@ if(isset($_POST['ok']) && $_POST['ok']=='Sauvegarder')
 		$val = $_POST['new_valeur'];
 		$enr = $_POST['new_param'];
 
-		$reponse = Bdd::getInstance()->prepare("INSERT INTO parametres (nom, valeur) VALUES (:enr,:val)");
+		$reponse = Bdd::getInstance($this)->prepare("INSERT INTO parametres (nom, valeur) VALUES (:enr,:val)");
 		$reponse->execute(array(
 			'val' => $_POST['new_valeur'],
 			'enr' => $_POST['new_param']
@@ -45,7 +45,7 @@ $form ->add('Submit', 'ok')
 $form ->bound($_POST);
 
 
-$param=Bdd::getInstance()->prepare("SELECT * FROM parametres;");
+$param=Bdd::getInstance($this)->prepare("SELECT * FROM parametres;");
 $param->execute();
 
 $tab=$param->fetchAll(PDO::FETCH_ASSOC);
