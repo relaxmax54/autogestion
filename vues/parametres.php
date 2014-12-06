@@ -2,26 +2,23 @@
 
 <?php
 /*
-**	affiche tous les paramètres de Seliwebcom et enregistre les modifications
-** autorise aussi la saisie directe de nouveaux champs avec leurs valeurs
+**	affiche tous les paramètres de personnalisation de l'application et enregistre les modifications
+**  autorise aussi la saisie directe de nouveaux champs avec leurs valeurs
 */
 
 //test les valeurs retournées par le navigateur
 if(isset($_POST['ok']) && $_POST['ok']=='Sauvegarder')
 {
-	//initialisation du compteur de modifications effectuées
-	//$nb_modifs=0;
+	//MAJ de la BDD à partir des données POST récupérées
 	foreach($_POST as $element=>$value)
 	{
-		//echo "UPDATE seliweb_parametrage SET valeur_param=".$value." WHERE nom_param=".$element;
 		$reponse = Bdd::getInstance()->prepare("UPDATE parametres SET valeur = :val WHERE nom =:enr");
 		$reponse->execute(array(
 			'val' => $value,
 			'enr' => $element
 		));
-		//$nb_modifs++;
 	}
-	//echo $nb_modifs . ' entrées ont été modifiées !';
+	//ajout d'un nouveau paramètre le cas échéant dans la BDD
 	if($_POST['new_param']!="")
 	{
 		$val = $_POST['new_valeur'];
@@ -44,7 +41,7 @@ if(isset($_POST['ok']) && $_POST['ok']=='Sauvegarder')
 $form = new Form('exemple','POST');
 //on ajoute les champs souhaités
 $form ->add('Submit', 'ok')
-      ->value("Sauvegarder");
+      ->value("Sauvegarder");    
 $form ->bound($_POST);
 
 
@@ -53,17 +50,14 @@ $param->execute();
 
 $tab=$param->fetchAll(PDO::FETCH_ASSOC);
 
-$i=0;
-
 foreach($tab as $element)
 {	
 	$libellé=$element['nom'];
 	// si des commentaires sont définis, on les affiche aussi
 	if($element['commentaire']!="")$libellé.=" ( ".$element['commentaire']." )";
-	$form	->add('Text', $element['nom'].$i)
+	$form	->add('Text', $element['nom'])
 			->value($element['valeur'])	
  	        ->label($libellé);
- 	$i++;
 }
 //on ajoute un champs d'insertion
 $form 	->add('Text',"new_param")
