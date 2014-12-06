@@ -14,15 +14,40 @@ class Framework{
 	* constructeur par défaut qui charge les paramètres de configuration de l'application
 	*/
 	public function __construct(){
-		//à modifier pour récupérer les paramètres en XML
-
-		//paramètres de connexion à la base de données
-		$this->BDD_SERVER="127.0.0.1";
-		$this->BDD_NAME="framework";	
-		$this->BDD_USER="raoul"; 
-		$this->BDD_PASSWORD="musique";
 		//le visiteur du site est déconnecté par défaut
 		$this->connexion=false;
+	}
+	/**
+	* charge un fichier xml
+	* @param $fichier : nom du fichier xml à charger
+	*/
+	public function chargerXml($fichier){
+		// controle de l'existence du fichier
+		if(file_exists($fichier)){
+
+		  // Instanciation de la classe DomDocument pour ouvrir le xml
+		  $xml = new DOMDocument();
+		  // chargement du fichier configuration.xml
+		  $xml->load($fichier);
+		  // recherche des constantes par leur nom
+		  $configuration = $xml->getElementsByTagName("constante");
+
+		  foreach($configuration as $element)
+		  {
+		      if ($element->hasAttribute("nom")) 
+		      {
+		        $nom_element        = $element->getAttribute("nom");
+		        $valeur_element     = trim($element->nodeValue);
+		        $this->$nom_element = $valeur_element;
+		      }
+		  }
+		  return true;
+
+		}else{
+
+			echo $fichier;
+			return false;
+		}
 	}
 	/**
 	* affiche les vues demandées par l'utilisateur

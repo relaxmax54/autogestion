@@ -16,18 +16,15 @@ class Bdd extends PDO {
   }
 
   /* Singleton */
-  public static function getInstance() {
-    
-    //fichier de configuration de la base de données
-    require_once("configuration.php");
+  public static function getInstance($application) {
 
     if (!isset(self::$_instance)) {
       
       try {
         // Connection au serveur
-        $dns          = 'mysql:host=localhost;dbname=autogestion';
-        $utilisateur  = 'raoul';
-        $motDePasse   = 'musique';
+        $dns          = "mysql:host=$application->BDD_SERVER;dbname=$application->BDD_NAME";
+        $utilisateur  = $application->BDD_USER;
+        $motDePasse   = $application->BDD_PASSWORD;
         // Options de connection
         $options=array(
           PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8",

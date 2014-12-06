@@ -16,10 +16,16 @@ if (!is_object($parametre))$parametre = new Parametre();
 //on détermine le dossier d'installation de l'application
 $application->root="http://".$_SERVER['HTTP_HOST'].rtrim(dirname($_SERVER['PHP_SELF']), '/\\');
 
-//chargement des paramètres de l'application
-$parametre -> chargerParametres();
-$application -> parametre = $parametre;
+//si le chargement la configuration ne retourne pas false
+if($application->chargerXml("configuration.xml")){
+	//chargement des paramètres de l'application
+	$parametre -> chargerParametres($application);
+	$application -> parametre = $parametre;
 
-header("Location:accueil/");
+	header("Location:accueil/");
+
+}else{
+	echo "<p>ERREUR : fichier de configuration absent</p>";
+}
 
 ?>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<configuration>
+	<constante nom='BDD_SERVER'>
+		<valeur>localhost</valeur>
+	</constante>
+	<constante nom='BDD_NAME'>
+		<valeur>autogestion</valeur>
+	</constante>
+	<constante nom='BDD_USER'>
+		<valeur>raoul</valeur>
+	</constante>
+	<constante nom='BDD_PASSWORD'>
+		<valeur>musique</valeur>
+	</constante>
+</configuration>
