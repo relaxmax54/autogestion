@@ -11,3 +11,4 @@ echo '<p><a href="'.$this->root.'/synthese/">synthese</a></p>';
 echo '<p><a href="'.$this->root.'/bootstrap/">Bootstrap</a></p>';
 echo '<p><a href="'.$this->root.'/saisie/">saisie</a></p>';
 echo '<p><a href="'.$this->root.'/parametres/">personnalisation</a></p>';
+echo '<p><a href="'.$this->root.'/csv/">afficheCSV</a></p>';
