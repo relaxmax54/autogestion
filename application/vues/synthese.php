@@ -9,7 +9,7 @@ $form ->add('Submit', 'ok')
       ->value("Sauvegarder");
 $form ->bound($_POST);
 
-$reponse=Bdd::getInstance()->prepare("SELECT intitule,SUM(montant) as total FROM operations,comptes WHERE operations.compte=comptes.id GROUP BY compte");
+$reponse=Bdd::getInstance($this)->prepare("SELECT intitule,SUM(montant) as total FROM operations,comptes WHERE operations.compte=comptes.id GROUP BY compte");
 $reponse->execute();
 
 //On parcourt l'objet récupéré sous forme de tableau pour afficher chacun des enregistrements

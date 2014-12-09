@@ -9,7 +9,7 @@ $form ->add('Submit', 'ok')
       ->value("Sauvegarder");
 $form ->bound($_POST);
 
-$reponse=Bdd::getInstance()->prepare("SELECT * FROM comptes");
+$reponse=Bdd::getInstance($this)->prepare("SELECT * FROM comptes");
 $reponse->execute();
 
 //On parcourt l'objet récupéré sous forme de tableau pour afficher chacun des enregistrements
