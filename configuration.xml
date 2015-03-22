@@ -10,6 +10,6 @@
 		<valeur>raoul</valeur>
 	</constante>
 	<constante nom='BDD_PASSWORD'>
-		<valeur>musique</valeur>
+		<valeur>autogestion</valeur>
 	</constante>
 </configuration>

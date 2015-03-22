@@ -1,11 +1,11 @@
 Options +FollowSymLinks -indexes
 
 RewriteEngine On
-RewriteBase /Developpement/github/autogestion
+RewriteBase /github/autogestion
 
 
 # gestion des erreurs
-ErrorDocument 404 					/Developpement/github/autogestion/erreur.php
+ErrorDocument 404 					/github/autogestion/erreur.php
 
 # gestion des routes
 

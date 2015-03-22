@@ -8,6 +8,7 @@ spl_autoload_register(function ($class) {
     	require 'modeles/' . $class . '.class.php';
 	}
 });
+
 session_start();
 $application = &$_SESSION['application'];
 if (!is_object($application))$application = new Application();

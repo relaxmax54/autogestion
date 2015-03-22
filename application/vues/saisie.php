@@ -1,7 +1,5 @@
 <h1>Formulaire de saisie d'opérations financières</h1>
 <?
-print_r($_POST);
-echo $_POST['date_saisie'];
 
 //test les valeurs retournées par le navigateur
 if(isset($_POST['ok']) && $_POST['ok']=='Sauvegarder'){
@@ -17,21 +15,19 @@ if(isset($_POST['ok']) && $_POST['ok']=='Sauvegarder'){
 			$valeur.=$value.',';
 		}
 	}
-	$champs.=')';
-	$valeur.=')';
-}
-echo $champs,$valeur;
-/*
-	$reponse = Bdd::getInstance($this)->prepare("INSERT INTO operations('date_saisie',)
-																		)
-																		 VALUES()");
-	$reponse->execute(array(
-		'val' => $value,
-		'enr' => $element
-	));
-}
+	$champs=substr($champs,0,-1).')';
+	$valeur=substr($valeur,0,-1).')';
 
-*/
+	echo $champs,$valeur;
+
+	$champs='(date_saisie,type,montant,compte,libelle,date_valeur)';
+	$valeur='(14/01/15,2,10,2,"essai",14/01/15)';
+
+
+	$reponse = Bdd::getInstance($this)->prepare("INSERT INTO operations VALUES :val)");
+	$reponse->execute(array('val' => $valeur));
+
+}
 
 //$saisie=new Formulaire("Formulaire de saisie d'opérations financières");
 
